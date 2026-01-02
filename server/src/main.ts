@@ -7,6 +7,6 @@ async function bootstrap() {
   app.useWebSocketAdapter(new WsAdapter(app));
   // Enable CORS for frontend access
   app.enableCors();
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 3000, '0.0.0.0');
 }
 bootstrap();

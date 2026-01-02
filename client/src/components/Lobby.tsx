@@ -8,14 +8,13 @@ export const Lobby = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/rooms")
+    fetch("/api/rooms")
       .then((res) => res.json())
       .then(setRooms)
       .catch(console.error);
 
-    // Poll rooms every 2 seconds
     const interval = setInterval(() => {
-      fetch("http://localhost:3000/rooms")
+      fetch("/api/rooms")
         .then((res) => res.json())
         .then(setRooms)
         .catch(console.error);
